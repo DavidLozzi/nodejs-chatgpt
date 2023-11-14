@@ -7,24 +7,17 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 const messages = [
-  { role: 'system', content: 'you are a senior in high school'},
-  { role: 'user', content: 'who are the best jedi knights? list them in numberic order.' },
-  { role: 'assistant', content: '1. Yoda\n' +
-  '2. Obi-Wan Kenobi\n' +
-  '3. Luke Skywalker\n' +
-  '4. Mace Windu\n' +
-    '5. Anakin Skywalker/Darth Vader\n'
-  },
-  { role: 'user', content: 'who are the best sith lords?'}
+  { role: 'user', content: 'Summarize this content: In this high-paced session, we\'ll break down the world of GenAI, dispel a myth or two, and discuss how we can leverage the power of an LLM in our Python, Node, and Java code! We\'ll dive into prompt engineering and wrap our minds around RAG (Retrieval Augmented Generation) as the quickest way to leverage our own data in any LLM. Finally, we\'ll discuss some real-world applications of GenAI across several industries.' }
 ];
 
 const doIt = async () => {
   try {
+    console.log('calling GPT')
     const completion = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
       messages
     });
-    console.log(completion.data);
+    console.log(completion.data.usage);
     console.log(completion.data.choices[0].message);
 
   } catch (error) {
