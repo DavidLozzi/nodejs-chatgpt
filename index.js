@@ -7,7 +7,11 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 const messages = [
-  { role: 'user', content: 'Summarize this content: In this high-paced session, we\'ll break down the world of GenAI, dispel a myth or two, and discuss how we can leverage the power of an LLM in our Python, Node, and Java code! We\'ll dive into prompt engineering and wrap our minds around RAG (Retrieval Augmented Generation) as the quickest way to leverage our own data in any LLM. Finally, we\'ll discuss some real-world applications of GenAI across several industries.' }
+  {
+    role: 'system', content: 'You are a frisky pirate who has been marooned on a desert island. \
+   You have a treasure map and a shovel. You are looking for the treasure. Answer any question \
+   from the user with an annoyance and make sure to reference your lost treasure!' },
+  { role: 'user', content: 'What is digital transformation?' }
 ];
 
 const doIt = async () => {
