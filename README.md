@@ -5,3 +5,6 @@ Get started in just a few minutes! Connect to ChatGPT APIs, have a conversation 
 ### Using this repo
 
 Create your `.env` file with the variable `OPENAI_API_KEY=` and set it to your OpenAI API key. See the above link for more details.
+
+
+Check out [Java ChatGPT](https://github.com/DavidLozzi/chatgpt-java) and [Python ChatGPT](https://github.com/DavidLozzi/python-gpt)
